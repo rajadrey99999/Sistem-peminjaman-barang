@@ -1,0 +1,225 @@
+@import 'tailwindcss';
+
+@import "tw-animate-css";
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+
+    --radius-lg: var(--radius);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-sm: calc(var(--radius) - 4px);
+
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+    --background: hsl(218 27% 94%);
+    /* Nord6 */
+    --foreground: hsl(220 16% 22%);
+    /* Nord0 */
+    --card: hsl(0 0% 100%);
+    --card-foreground: hsl(220 16% 22%);
+    --popover: hsl(0 0% 100%);
+    --popover-foreground: hsl(220 16% 22%);
+    --primary: hsl(213 32% 52%);
+    /* Nord10 */
+    --primary-foreground: hsl(210 40% 98%);
+    --secondary: hsl(218 27% 92%);
+    /* Nord5 */
+    --secondary-foreground: hsl(222 16% 28%);
+    --muted: hsl(218 27% 92%);
+    /* Nord5 */
+    --muted-foreground: hsl(220 16% 36%);
+    /* Nord3 */
+    --accent: hsl(218 27% 92%);
+    /* Nord5 */
+    --accent-foreground: hsl(222 16% 28%);
+    --destructive: hsl(354 42% 56%);
+    /* Nord11 */
+    --destructive-foreground: hsl(210 40% 98%);
+    --border: hsl(218 27% 88%);
+    /* Nord4 */
+    --input: hsl(218 27% 88%);
+    --ring: hsl(213 32% 52%);
+    /* Nord10 */
+    --chart-1: hsl(354 42% 56%);
+    /* Nord11 */
+    --chart-2: hsl(213 32% 52%);
+    /* Nord10 */
+    --chart-3: hsl(193 43% 67%);
+    /* Nord8 */
+    --chart-4: hsl(92 28% 65%);
+    /* Nord14 */
+    --chart-5: hsl(311 20% 63%);
+    /* Nord15 */
+    --radius: 0.5rem;
+
+    --sidebar: hsl(218 27% 94%);
+    --sidebar-foreground: hsl(220 16% 22%);
+    --sidebar-primary: hsl(213 32% 52%);
+    --sidebar-primary-foreground: hsl(210 40% 98%);
+    --sidebar-accent: hsl(218 27% 88%);
+    --sidebar-accent-foreground: hsl(222 16% 28%);
+    --sidebar-border: hsl(218 27% 88%);
+    --sidebar-ring: hsl(213 32% 52%);
+}
+
+.dark {
+    --background: hsl(220 16% 22%);
+    /* Nord0 */
+    --foreground: hsl(218 27% 94%);
+    /* Nord6 */
+    --card: hsl(222 16% 28%);
+    /* Nord1 */
+    --card-foreground: hsl(218 27% 94%);
+    --popover: hsl(222 16% 28%);
+    --popover-foreground: hsl(218 27% 94%);
+    --primary: hsl(193 43% 67%);
+    /* Nord8 */
+    --primary-foreground: hsl(222 16% 28%);
+    /* Nord1 */
+    --secondary: hsl(220 17% 32%);
+    /* Nord2 */
+    --secondary-foreground: hsl(218 27% 94%);
+    --muted: hsl(220 17% 32%);
+    /* Nord2 */
+    --muted-foreground: hsl(218 27% 88%);
+    /* Nord4 */
+    --accent: hsl(220 17% 32%);
+    /* Nord2 */
+    --accent-foreground: hsl(218 27% 94%);
+    --destructive: hsl(354 42% 56%);
+    /* Nord11 */
+    --destructive-foreground: hsl(218 27% 94%);
+    --border: hsl(220 17% 32%);
+    /* Nord2 */
+    --input: hsl(220 17% 32%);
+    --ring: hsl(193 43% 67%);
+    /* Nord8 */
+    --chart-1: hsl(354 42% 56%);
+    --chart-2: hsl(213 32% 52%);
+    --chart-3: hsl(193 43% 67%);
+    --chart-4: hsl(92 28% 65%);
+    --chart-5: hsl(311 20% 63%);
+    --sidebar: hsl(222 16% 28%);
+    --sidebar-foreground: hsl(218 27% 94%);
+    --sidebar-primary: hsl(193 43% 67%);
+    --sidebar-primary-foreground: hsl(222 16% 28%);
+    --sidebar-accent: hsl(220 17% 32%);
+    --sidebar-accent-foreground: hsl(218 27% 94%);
+    --sidebar-border: hsl(220 17% 32%);
+    --sidebar-ring: hsl(193 43% 67%);
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
+
+@layer utilities {
+    .perspective-1000 {
+        perspective: 1000px;
+    }
+
+    .rotate-y-12 {
+        transform: rotateY(-12deg);
+    }
+
+    .rotate-x-6 {
+        transform: rotateX(6deg);
+    }
+}
+
+@keyframes scan {
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+.animate-scan {
+    animation: scan 3s linear infinite;
+}
+
+@keyframes bounce-slow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite;
+}
